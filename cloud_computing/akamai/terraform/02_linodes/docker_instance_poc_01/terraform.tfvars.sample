@@ -1,0 +1,15 @@
+# Sample tfvars file - DO NOT commit actual terraform.tfvars with real values
+# Rename this file to terraform.tfvars and fill in your actual values
+
+# Your Linode API token - get this from Linode Cloud Manager
+linode_poc_vm_token = "your_linode_api_token_here"
+
+# Root password for the Linode instance
+# Make sure this is a strong password with at least 8 characters
+# including uppercase, lowercase, numbers, and special characters
+root_pass = "YourStrongPassword123!@#"
+
+# Password for the developer user
+# Make sure this is a strong password with at least 8 characters
+# including uppercase, lowercase, numbers, and special characters
+developer_pass = "YourDeveloperPassword123!@#"
