@@ -22,8 +22,14 @@ resource "linode_instance" "poc-web" {
   authorized_users = var.authorized_users
   root_pass       = var.root_pass
 
+  # Add user_data for StackScript UDF fields
+  # Add other UDF fields as needed by your StackScript
+  stackscript_data = {
+    "user_name" = var.stackscript_username    
+  }
+
   provisioner "file" {
-    source      = "setup_script.sh"
+    source      = "./scripts/setup_script.sh"
     destination = "/tmp/setup_script.sh"
     connection {
       type     = "ssh"
