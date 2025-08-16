@@ -1,10 +1,20 @@
 #!/bin/bash
 
-# Check if password argument is provided
+# Check if username argument is provided
 if [ -z "$1" ]; then
+    echo "Error: Developer username not provided"
+    exit 1
+fi
+
+developer_name=$1
+
+# Check if password argument is provided
+if [ -z "$2" ]; then
     echo "Error: Developer password not provided"
     exit 1
 fi
+
+developer_password=$2
 
 # Update package list
 apt-get update
@@ -16,7 +26,7 @@ apt-get install -y jq
 useradd -m -s /bin/bash developer
 
 # Set password for developer user using the provided password
-echo "developer:$1" | chpasswd
+echo "$developer_name:$developer_password" | chpasswd
 
 # Add developer to sudo group
 usermod -aG sudo developer

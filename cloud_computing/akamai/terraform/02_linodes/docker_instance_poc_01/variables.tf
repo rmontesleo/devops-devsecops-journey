@@ -1,7 +1,7 @@
 
 variable "linode_poc_vm_token" {
   type        = string
-  description = "Temporal token only to create Linode Instances"
+  description = "Temporal token only to create Linode Instances. This value in define in environment"
   sensitive   = true
 }
 
@@ -15,6 +15,12 @@ variable "developer_pass" {
   type        = string
   description = "Password for the developer user"
   sensitive   = true
+}
+
+variable "developer_name" {
+  type = string
+  description = "Developer username for the linode instance"
+  default = "developer"  
 }
 
 variable "region" {

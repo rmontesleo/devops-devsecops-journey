@@ -42,7 +42,7 @@ resource "linode_instance" "poc-web" {
   provisioner "remote-exec" {
     inline = [
       "chmod +x /tmp/setup_script.sh",
-      "/tmp/setup_script.sh '${var.developer_pass}'",
+      "/tmp/setup_script.sh '${var.developer_name}' '${var.developer_pass}' ",
       "sleep 1"
     ]
 
